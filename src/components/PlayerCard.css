@@ -1,18 +1,18 @@
-/* .player-card {
-  background: var(--color-header);
-  color: var(--color-text-light);
+.player-card {
+  background: var(--primary);
+  color: var(--light);
   border-radius: var(--radius-lg);
   padding: 20px;
 }
 
 .player-card__title {
-  color: var(--color-text-light);
+  color: var(--light);
   font-size: 20px;
 }
 
 .player-card__screen {
-  background: var(--color-cream);
-  color: var(--color-text);
+  background: var(--priamary-light);
+  color: var(--primary);
   border-radius: var(--radius-md);
   padding: 16px;
   font-family: var(--font-mono);
@@ -44,8 +44,8 @@
   text-align: center;
   padding: 10px;
   border-radius: var(--radius-sm);
-  background: #0f2420;
-  color: var(--color-text-light);
+  background: var(--dark);
+  color: var(--light);
   text-decoration: none;
   font-weight: 600;
   font-size: 13px;
@@ -58,8 +58,8 @@
 }
 
 .player-card__transport button {
-  background: var(--color-red);
-  color: #fff;
+  background: var(--accent-2);
+  color: var(--light);
   border-radius: 999px;
   width: 40px;
   height: 40px;
@@ -78,8 +78,8 @@
 }
 
 .player-card__share {
-  background: var(--color-orange);
-  color: var(--color-teal);
+  background: var(--accent-1);
+  color: var(--primary);
   border-radius: var(--radius-sm);
   padding: 8px 14px;
   font-weight: 600;
@@ -87,10 +87,10 @@
 }
 
 .player-card__download {
-  background: var(--color-red);
-  color: #fff;
+  background: var(--accent-2);
+  color: var(--light);
   border-radius: var(--radius-sm);
   padding: 8px 14px;
   font-weight: 600;
   font-size: 13px;
-} */
+}

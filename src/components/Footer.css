@@ -1,12 +1,12 @@
-/* .footer {
+.footer {
   margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 24px 32px;
-  background: #0f2420;
-  color: var(--color-text-light);
+  background: var(--dark);
+  color: var(--light);
 }
 
 .footer__logo {
@@ -25,8 +25,8 @@
 .footer__mail {
   padding: 10px 18px;
   border-radius: var(--radius-sm);
-  background: var(--color-header);
-  color: var(--color-text-light);
+  background: var(--primary);
+  color: var(--light);
   text-decoration: none;
   font-weight: 600;
   white-space: nowrap;
@@ -37,4 +37,4 @@
     flex-direction: column;
     align-items: flex-start;
   }
-} */
+}

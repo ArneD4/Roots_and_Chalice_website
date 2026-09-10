@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react' // 1. Added useEffect
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
+import Button from './Button'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -10,14 +11,31 @@ const links = [
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  // 2. Track width in state so React reacts to changes
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth) 
+
+  // 3. Listen for window resize events
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    
+    window.addEventListener('resize', handleResize)
+    
+    // Clean up listener when component unmounts
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <header className="navbar">
       <a href="/" className="navbar__logo">
         <span className="navbar__logo-icon" aria-hidden="true">
-          ⌒
+          {/* 4. Use windowWidth state instead of direct window.innerWidth */}
+          {windowWidth >= 768 && (
+            <img src="./logo/horizontal.svg" alt="logo_horizontal" srcSet="./logo/horizontal.svg" />
+          )}
+          {windowWidth < 768 && (
+            <img src="./logo/Icon.svg" alt="logo_vertical" srcSet="./logo/Icon.svg" />
+          )}
         </span>
-        roots&amp;chalice
       </a>
 
       <nav className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
@@ -37,18 +55,10 @@ function Navbar() {
       </nav>
 
       <div className="navbar__actions">
-        <a className="navbar__icon-btn navbar__icon-btn--mixcloud" href="#" aria-label="Mixcloud">
-          M-x
-        </a>
-        <a className="navbar__icon-btn" href="#" aria-label="Instagram">
-          IG
-        </a>
-        <a className="navbar__icon-btn" href="#" aria-label="Facebook">
-          f
-        </a>
-        <a className="navbar__icon-btn" href="#" aria-label="Mail ons">
-          @
-        </a>
+        <Button variant="secondary" icon="Mixcloud" href="https://www.mixcloud.com/Roots_and_Chalice/" aria-label="Mixcloud" />
+        <Button variant="secondary" icon="Instagram" href="https://www.instagram.com/rootsandchalice_radioshow/" aria-label="Instagram" />
+        <Button variant="secondary" icon="Facebook" href="https://www.facebook.com/profile.php?id=100063773671400" aria-label="Facebook" />
+        <Button variant="secondary" icon="Mail" href="mailto:contact@rootsandchalice.be" aria-label="Mail ons" />
       </div>
 
       <button

@@ -1,29 +1,105 @@
 :root {
-  --color-bg: #faf0d3;
-  --color-header: #2f5d52;
-  --color-header-light: #3c6d61;
-  --color-card: #efe9d3;
-  --color-card-dark: #1e3d38;
-  --color-text: #1e3d38;
-  --color-text-light: #faf0d3;
-  --color-red: #e2645c;
-  --color-orange: #eda43a;
-  --color-teal: #1e3d38;
-  --color-cream: #f6ecc9;
+  --space-0-25: 0.25rem;
+  --space-0-5: 0.5rem;
+  --space-1: 1rem;
+  --space-1-5: 1.5rem;
+  --space-2: 2rem;
+  --space-2-5: 2.5rem;
+  --space-3: 3rem;
+  --space-3-5: 3.5rem;
+  --space-4: 4rem;
+
+  --priamary-light: #fff0c8;
+  --primary: #23594b;
+  --accent-1: #ec8d13;
+  --accent-2: #d74035;
+  --dark: #182421;
+  --light: #fefbe8;
+  --skeuomorphism-stroke: #00000066;
+
+  --gradient-priamry-light: linear-gradient(90deg, rgba(255, 240, 200, 1) 0%, rgba(255, 246, 222, 1) 100%);
+  --gradient-priamry-light-reversed: linear-gradient(90deg, rgba(255, 246, 222, 1) 0%, rgba(255, 240, 200, 1) 100%);
+  --gradient-priamry-light-big: linear-gradient(90deg, rgba(255, 240, 200, 1) 0%, rgba(255, 250, 235, 1) 100%);
+  --gradient-primary: linear-gradient(90deg, rgba(35, 89, 75, 1) 0%, rgba(51, 113, 97, 1) 100%);
+  --gradient-primary-reverse: linear-gradient(90deg, rgba(51, 113, 97, 1) 0%, rgba(35, 89, 75, 1) 100%);
+  --gradient-accent-1: linear-gradient(90deg, rgba(253, 172, 68, 1) 0%, rgba(236, 141, 19, 1) 100%);
+  --gradient-accent-1-reverse: linear-gradient(90deg, rgba(236, 141, 19, 1) 0%, rgba(253, 172, 68, 1) 100%);
+  --gradient-accent-2: linear-gradient(90deg, rgba(215, 64, 53, 1) 0%, rgba(245, 110, 100, 1) 100%);
+  --gradient-accent-2-reverse: linear-gradient(90deg, rgba(245, 110, 100, 1) 0%, rgba(215, 64, 53, 1) 100%);
+  --gradient-primary-light-radial: radial-gradient(50% 50% at 50% 50%, rgba(255, 247, 225, 1) 0%, rgba(251, 230, 173, 1) 100%);
+  --gradient-light: linear-gradient(90deg, rgba(254, 251, 232, 1) 0%, rgba(239, 236, 216, 1) 100%);
+  --gradient-light-reversed: linear-gradient(90deg, rgba(239, 236, 216, 1) 0%, rgba(254, 251, 232, 1) 100%);
+  --gradient-primary-radial: linear-gradient(90deg, rgba(246, 230, 185, 1) 0%, rgba(255, 240, 200, 1) 100%);
+  --gradient-dark: linear-gradient(90deg, rgba(24, 36, 33, 1) 0%, rgba(48, 72, 66, 1) 100%);
+  --gradient-dark-reverse: linear-gradient(90deg, rgba(48, 72, 66, 1) 0%, rgba(24, 36, 33, 1) 100%);
+
+  /* no equivalent in the new Figma palette, kept as-is */
   --color-border: #d8cfa8;
-  --radius-lg: 24px;
-  --radius-md: 16px;
-  --radius-sm: 4px;
+
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.25rem;
+
+  --shadow-skeuomorphism:
+    inset 0px 3px 1px 0px rgba(255, 255, 255, 0.2),
+    inset 0px 6px 3px 0px rgba(255, 255, 255, 0.09),
+    inset 0px -3px 1px 0px rgba(0, 0, 0, 0.25),
+    inset 0px -6px 3px 0px rgba(0, 0, 0, 0.09),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.5),
+    0px 0px 1px 1px rgba(0, 0, 0, 0.4);
+
+  --shadow-skeuomorphism-inverted:
+    inset 0px 3px 1px 0px rgba(0, 0, 0, 0.2),
+    inset 0px 6px 3px 0px rgba(0, 0, 0, 0.09),
+    inset 0px -3px 1px 0px rgba(255, 255, 255, 0.2),
+    inset 0px -6px 3px 0px rgba(255, 255, 255, 0.09),
+    0px 0px 1px 1px rgba(0, 0, 0, 0.4);
+
+  --shadow-skeuomorphism-inverted-shadow:
+    inset 0px 3px 1px 0px rgba(0, 0, 0, 0.2),
+    inset 0px 6px 3px 0px rgba(0, 0, 0, 0.09),
+    inset 0px -3px 1px 0px rgba(255, 255, 255, 0.2),
+    inset 0px -6px 3px 0px rgba(255, 255, 255, 0.09),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.3),
+    0px 0px 1px 1px rgba(0, 0, 0, 0.4);
+
+  --shadow-skeuomorphism-large:
+    inset 0px 6px 10px 0px rgba(255, 255, 255, 0.2),
+    inset 0px 60px 30px 0px rgba(255, 255, 255, 0.09),
+    inset 0px 1px 3px 0px rgba(0, 0, 0, 0.3),
+    inset 0px 8px 16px 0px rgba(0, 0, 0, 0.4),
+    0px 8px 24px 0px rgba(0, 0, 0, 0.6),
+    0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+
+  --shadow-skeuomorphism-large-inverted:
+    inset 0px 1px 3px 0px rgba(0, 0, 0, 0.6),
+    inset 0px 8px 16px 0px rgba(0, 0, 0, 0.9),
+    inset 0px -6px 10px 0px rgba(255, 255, 255, 0.2),
+    inset 0px -20px 30px 0px rgba(255, 255, 255, 0.09),
+    0px 0px 1px 1px rgba(0, 0, 0, 0.4);
+
+  --shadow-skeuomorphism-toggle:
+    inset 0px 6px 3px 0px rgba(255, 255, 255, 0.09),
+    inset 0px -6px 3px 0px rgba(0, 0, 0, 0.09),
+    -1px 1px 2px 0.1px rgba(0, 0, 0, 0.8);
+
+  --shadow-screen:
+    inset 0px 4px 8px 0px rgba(0, 0, 0, 0.8),
+    inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+
+  --shadow-dropshadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.5);
+
+  --shadow-on-air: 0px 0px 15px 0px rgba(255, 180, 171, 1);
 
   --font-heading: 'Doto', system-ui, sans-serif;
   --font-mono: 'Space Mono', ui-monospace, monospace;
-  --font-sans: system-ui, 'Space Grotesk', Roboto, sans-serif;
-  --font-body: system-ui, 'IBM Plex Sans', Roboto, sans-serif;
-  --font-tech: system-ui, 'Doto', ui-monospace, monospace;
+  --font-sans: 'Space Grotesk', system-ui, Roboto, sans-serif;
+  --font-body: 'IBM Plex Serif', system-ui, Georgia, serif;
+  --font-tech: 'Doto', system-ui, ui-monospace, monospace;
 
   font: 16px/145% var(--font-sans);
-  color: var(--color-text);
-  background: var(--color-bg);
+  color: var(--primary);
+  background: var(--priamary-light);
   color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,27 +126,96 @@ h1,
 h2,
 h3 {
   font-family: var(--font-mono);
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary);
   margin: 0 0 8px;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
 h4 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--primary);
+}
+
+/* alternative display style for h2/h4 */
+.h2--alt,
+.h4--alt {
   font-family: var(--font-heading);
+  font-weight: 900;
+}
+
+.h2--alt {
+  text-transform: uppercase;
 }
 
 p {
   margin: 0;
   font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 a {
   color: inherit;
   font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
+.caption {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  .caption {
+    font-size: 0.75rem;
+  }
 }

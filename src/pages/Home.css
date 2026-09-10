@@ -1,4 +1,4 @@
-/* .home {
+.home {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
@@ -7,8 +7,8 @@
 }
 
 .home__intro {
-  background: #0f2420;
-  color: var(--color-text-light);
+  background: var(--dark);
+  color: var(--light);
   border-radius: var(--radius-lg);
   padding: 28px;
   text-align: left;
@@ -16,7 +16,7 @@
 
 .home__intro h1,
 .home__intro h2 {
-  color: var(--color-text-light);
+  color: var(--light);
 }
 
 .home__logo {
@@ -25,7 +25,7 @@
 
 .home__tagline {
   font-family: var(--font-heading);
-  color: var(--color-orange);
+  color: var(--accent-1);
   margin-bottom: 16px;
 }
 
@@ -60,16 +60,17 @@
   font-weight: 700;
   font-size: 13px;
   text-decoration: none;
+  box-shadow: var(--shadow-skeuomorphism);
 }
 
 .home__cta-btn--orange {
-  background: var(--color-orange);
-  color: var(--color-teal);
+  background: var(--accent-1);
+  color: var(--primary);
 }
 
 .home__cta-btn--red {
-  background: var(--color-red);
-  color: #fff;
+  background: var(--accent-2);
+  color: var(--light);
 }
 
 .home__player-section {
@@ -79,15 +80,15 @@
 }
 
 .home__most-played {
-  background: var(--color-header-light);
-  color: var(--color-text-light);
+  background: var(--primary);
+  color: var(--light);
   border-radius: var(--radius-lg);
   padding: 20px;
   text-align: left;
 }
 
 .home__most-played h2 {
-  color: var(--color-text-light);
+  color: var(--light);
 }
 
 .home__all-shows {
@@ -95,8 +96,8 @@
   margin-top: 12px;
   padding: 8px 16px;
   border-radius: var(--radius-sm);
-  background: #0f2420;
-  color: var(--color-text-light);
+  background: var(--dark);
+  color: var(--light);
   text-decoration: none;
   font-weight: 600;
   font-size: 13px;
@@ -107,4 +108,4 @@
     grid-template-columns: 1fr;
     padding: 16px;
   }
-} */
+}

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Archief from './pages/Archief'
 import Soundboard from './pages/Soundboard'
 import { PlayerProvider } from './context/PlayerContext'
+// import './App.css'
 
 function App() {
   return (

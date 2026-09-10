@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--color-card);
+  background: var(--priamary-light);
   border-top: 1px solid var(--color-border);
   z-index: 100;
 }
@@ -13,3 +13,9 @@
   left: -9999px;
   right: auto;
 }
+
+/* ---- Mini player buttons (fill in from Figma "Mini Player" component) ---- */
+/* not yet wired to any transport logic - styling scaffold only */
+/* TODO: .player-btn--play { } */
+/* TODO: .player-btn--next { } */
+/* TODO: .player-btn--prev { } */
