@@ -11,8 +11,8 @@ function Button({variant, content, icon, href, onClick}) {
       target={href ? '_blank' : undefined}
       rel={href ? 'noopener noreferrer' : undefined}
     >
-      {icon && <Icon icon={icon} />}
       {content}
+      {icon && <Icon icon={icon} />}
     </Tag>
   )
 }

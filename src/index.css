@@ -9,7 +9,7 @@
   --space-3-5: 3.5rem;
   --space-4: 4rem;
 
-  --priamary-light: #fff0c8;
+  --primary-light: #fff0c8;
   --primary: #23594b;
   --accent-1: #ec8d13;
   --accent-2: #d74035;
@@ -17,21 +17,21 @@
   --light: #fefbe8;
   --skeuomorphism-stroke: #00000066;
 
-  --gradient-priamry-light: linear-gradient(90deg, rgba(255, 240, 200, 1) 0%, rgba(255, 246, 222, 1) 100%);
-  --gradient-priamry-light-reversed: linear-gradient(90deg, rgba(255, 246, 222, 1) 0%, rgba(255, 240, 200, 1) 100%);
-  --gradient-priamry-light-big: linear-gradient(90deg, rgba(255, 240, 200, 1) 0%, rgba(255, 250, 235, 1) 100%);
-  --gradient-primary: linear-gradient(90deg, rgba(35, 89, 75, 1) 0%, rgba(51, 113, 97, 1) 100%);
-  --gradient-primary-reverse: linear-gradient(90deg, rgba(51, 113, 97, 1) 0%, rgba(35, 89, 75, 1) 100%);
-  --gradient-accent-1: linear-gradient(90deg, rgba(253, 172, 68, 1) 0%, rgba(236, 141, 19, 1) 100%);
-  --gradient-accent-1-reverse: linear-gradient(90deg, rgba(236, 141, 19, 1) 0%, rgba(253, 172, 68, 1) 100%);
-  --gradient-accent-2: linear-gradient(90deg, rgba(215, 64, 53, 1) 0%, rgba(245, 110, 100, 1) 100%);
-  --gradient-accent-2-reverse: linear-gradient(90deg, rgba(245, 110, 100, 1) 0%, rgba(215, 64, 53, 1) 100%);
+  --gradient-primary-light: linear-gradient(0deg, rgba(255, 240, 200, 1) 0%, rgba(255, 246, 222, 1) 100%);
+  --gradient-primary-light-reversed: linear-gradient(0deg, rgba(255, 246, 222, 1) 0%, rgba(255, 240, 200, 1) 100%);
+  --gradient-primary-light-big: linear-gradient(0deg, rgba(255, 240, 200, 1) 0%, rgba(255, 250, 235, 1) 100%);
+  --gradient-primary: linear-gradient(0deg, rgba(35, 89, 75, 1) 0%, rgba(51, 113, 97, 1) 100%);
+  --gradient-primary-reverse: linear-gradient(0deg, rgba(51, 113, 97, 1) 0%, rgba(35, 89, 75, 1) 100%);
+  --gradient-accent-1: linear-gradient(0deg, rgba(253, 172, 68, 1) 0%, rgba(236, 141, 19, 1) 100%);
+  --gradient-accent-1-reverse: linear-gradient(0deg, rgba(236, 141, 19, 1) 0%, rgba(253, 172, 68, 1) 100%);
+  --gradient-accent-2: linear-gradient(0deg, rgba(215, 64, 53, 1) 0%, rgba(245, 110, 100, 1) 100%);
+  --gradient-accent-2-reverse: linear-gradient(0deg, rgba(245, 110, 100, 1) 0%, rgba(215, 64, 53, 1) 100%);
   --gradient-primary-light-radial: radial-gradient(50% 50% at 50% 50%, rgba(255, 247, 225, 1) 0%, rgba(251, 230, 173, 1) 100%);
-  --gradient-light: linear-gradient(90deg, rgba(254, 251, 232, 1) 0%, rgba(239, 236, 216, 1) 100%);
-  --gradient-light-reversed: linear-gradient(90deg, rgba(239, 236, 216, 1) 0%, rgba(254, 251, 232, 1) 100%);
+  --gradient-light: linear-gradient(0deg, rgba(254, 251, 232, 1) 0%, rgba(239, 236, 216, 1) 100%);
+  --gradient-light-reversed: linear-gradient(0deg, rgba(239, 236, 216, 1) 0%, rgba(254, 251, 232, 1) 100%);
   --gradient-primary-radial: linear-gradient(90deg, rgba(246, 230, 185, 1) 0%, rgba(255, 240, 200, 1) 100%);
-  --gradient-dark: linear-gradient(90deg, rgba(24, 36, 33, 1) 0%, rgba(48, 72, 66, 1) 100%);
-  --gradient-dark-reverse: linear-gradient(90deg, rgba(48, 72, 66, 1) 0%, rgba(24, 36, 33, 1) 100%);
+  --gradient-dark: linear-gradient(0deg, rgba(24, 36, 33, 1) 0%, rgba(48, 72, 66, 1) 100%);
+  --gradient-dark-reverse: linear-gradient(0deg, rgba(48, 72, 66, 1) 0%, rgba(24, 36, 33, 1) 100%);
 
   /* no equivalent in the new Figma palette, kept as-is */
   --color-border: #d8cfa8;
@@ -99,7 +99,7 @@
 
   font: 16px/145% var(--font-sans);
   color: var(--primary);
-  background: var(--priamary-light);
+  background: var(--primary-light);
   color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;

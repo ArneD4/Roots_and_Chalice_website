@@ -1,77 +1,69 @@
 .home {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  padding: 32px;
+  gap: var(--space-1-5);
   align-items: start;
 }
 
 .home__intro {
-  background: var(--dark);
+  background: var(--gradient-dark);
   color: var(--light);
-  border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: var(--space-2);
   text-align: left;
+  height: 100%;
+  padding: 4.5rem var(--space-2);
 }
 
-.home__intro h1,
-.home__intro h2 {
+.home__intro_inner {
+    display: flex;
+    flex-direction: column;
+    background: var(--gradient-dark-reverse);
+    padding: var(--space-1-5);
+    gap: var(--space-4);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-skeuomorphism-large-inverted);
+}
+
+.home__intro h3 {
   color: var(--light);
 }
 
-.home__logo {
-  font-size: 32px;
+.intro {
+  text-align: center;
 }
 
-.home__tagline {
-  font-family: var(--font-heading);
-  color: var(--accent-1);
-  margin-bottom: 16px;
-}
 
 .home__description {
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.9;
+  text-align: center;
+  margin-top: var(--space-1);
 }
 
-.home__schedule {
+.calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.calendar_inner {
   list-style: none;
-  margin: 12px 0 0;
+  margin: 0;
   padding: 0;
-  font-size: 13px;
 }
 
-.home__schedule li {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+.calendar_inner li {
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--primary-light);
 }
 
 .home__cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+  gap: var(--space-1);
+  margin-top: var(--space-1-5);
 }
 
-.home__cta-btn {
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  font-weight: 700;
-  font-size: 13px;
-  text-decoration: none;
-  box-shadow: var(--shadow-skeuomorphism);
-}
 
-.home__cta-btn--orange {
-  background: var(--accent-1);
-  color: var(--primary);
-}
 
-.home__cta-btn--red {
-  background: var(--accent-2);
-  color: var(--light);
-}
 
 .home__player-section {
   display: flex;
@@ -105,7 +97,13 @@
 
 @media (max-width: 900px) {
   .home {
+    padding: 0;
     grid-template-columns: 1fr;
-    padding: 16px;
   }
+
+  .home__intro {
+    border-radius: 0;
+  }
+
+
 }

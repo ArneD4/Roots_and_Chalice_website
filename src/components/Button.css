@@ -10,10 +10,13 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-skeuomorphism);
-  color: var(--priamry-light);
+  color: var(--primary-light);
   height: 2.5rem;
   padding: 0.5rem 1rem;
+  gap: var(--space-0-5);
   border-radius: var(--radius-sm);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-primary { 
