@@ -8,15 +8,18 @@ button {
 .btn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: var(--shadow-skeuomorphism);
   color: var(--primary-light);
   height: 2.5rem;
   padding: 0.5rem 1rem;
   gap: var(--space-0-5);
+  border-color: var(--skeuomorphism-stroke-color);
+  border-width: 0 0 2px 2px;
   border-radius: var(--radius-sm);
   text-decoration: none;
   white-space: nowrap;
+  
 }
 
 .btn-primary { 
@@ -32,6 +35,16 @@ button {
   color: var(--light);
 }
 
+.btn-bigPlayButton {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  background: var(--accent-2);
+  color: var(--light);
+}
+
 .btn:active {
   box-shadow: var(--shadow-skeuomorphism-inverted);
+  border-color: var(--skeuomorphism-stroke-color);
+  border-width: 2px 2px 0 0 ;
 }

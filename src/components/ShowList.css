@@ -13,7 +13,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 16px;
-  background: var(--primary-light);
+  background: var(--priamary-light);
   border-radius: var(--radius-sm);
   text-align: left;
 }
@@ -27,7 +27,7 @@
 .show-list__date {
   font-size: 12px;
   opacity: 0.7;
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .show-list__actions {
@@ -36,5 +36,24 @@
   flex-shrink: 0;
 }
 
+.show-list__actions button {
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 8px 10px;
+}
 
+.show-list__play {
+  /* background: var(--accent-2); */
+  color: var(--light);
+}
 
+.show-list__share {
+  background: var(--accent-1);
+  color: var(--primary);
+}
+
+.show-list__download {
+  background: var(--primary);
+  color: var(--light);
+} 

@@ -1,18 +1,24 @@
 import './Button.css'
 import Icon from './Icon'
 
-function Button({variant, content, icon, href, onClick}) {
+function Button({variant, content, icon, href, onClick, size, target, share}) {
   const Tag = href ? 'a' : 'button'
+
+  onClick = () => {
+    console.log(share)
+  }
+
   return (
     <Tag
       className={`btn btn-${variant}`}
       href={href}
       onClick={onClick}
-      target={href ? '_blank' : undefined}
+      target={target === 'blank' ? '_blank' : undefined}
       rel={href ? 'noopener noreferrer' : undefined}
+
     >
       {content}
-      {icon && <Icon icon={icon} />}
+      {icon && <Icon icon={icon} size={size} content={content}/>}
     </Tag>
   )
 }

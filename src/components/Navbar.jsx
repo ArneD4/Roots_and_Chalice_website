@@ -55,8 +55,8 @@ function Navbar() {
       </nav>
 
       <div className="navbar__actions">
-        <Button variant="secondary" icon="Mixcloud" href="https://www.mixcloud.com/Roots_and_Chalice/" aria-label="Mixcloud" />
-        <Button variant="secondary" icon="Instagram" href="https://www.instagram.com/rootsandchalice_radioshow/" aria-label="Instagram" />
+        <Button variant="secondary" icon="Mixcloud" href="https://www.mixcloud.com/Roots_and_Chalice/" aria-label="Mixcloud" target='blank'/>
+        <Button variant="secondary" icon="Instagram" href="https://www.instagram.com/rootsandchalice_radioshow/" aria-label="Instagram" target='blank'/>
         <Button variant="secondary" icon="Facebook" href="https://www.facebook.com/profile.php?id=100063773671400" aria-label="Facebook" />
         <Button variant="secondary" icon="Mail" href="mailto:contact@rootsandchalice.be" aria-label="Mail ons" />
       </div>

@@ -61,6 +61,7 @@ function Home() {
               content="Ga naar onze Mixcloud"
               icon="Right"
               href="https://www.mixcloud.com/Roots_and_Chalice"
+               target='blank'
             ></Button>
           </div>
         </div>
@@ -72,9 +73,12 @@ function Home() {
         <div className="home__most-played">
           <h2>Meest beluisterde shows</h2>
           <ShowList shows={mostPlayed} />
-          <a className="home__all-shows" href="/archief">
-            Alle shows →
-          </a>
+          <Button
+            variant="secondary"
+            content="Bekijk alle shows"
+            icon="Right"
+            href="/archief"
+          ></Button>
         </div>
       </section>
     </div>

@@ -1,96 +1,103 @@
 .player-card {
-  background: var(--primary);
+  background: var(--gradient-primary);
   color: var(--light);
-  border-radius: var(--radius-lg);
-  padding: 20px;
+  border-color: var(--skeuomorphism-stroke-color);
+  border-width: 0 0 2px 2px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-skeuomorphism-large);  
+}
+
+.player-card_header {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  background: var(--gradient-dark-reverse);
+  border: 1px solid var(--gradient-dark);
+  padding: var(--space-1-5);
+}
+
+.player-card_content {
+  display: flex;
+  flex-direction: column;
+  background: var(--gradient-primary);
+  padding: var(--space-1-5);
+  border-radius: var(--radius-md);
+  gap: var(--space-1-5);
 }
 
 .player-card__title {
   color: var(--light);
-  font-size: 20px;
 }
 
 .player-card__screen {
-  background: var(--primary-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--gradient-light);
   color: var(--primary);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gradient-light-reverse);
+  padding: var(--space-1);
   font-family: var(--font-mono);
   text-align: left;
-  min-height: 90px;
-  margin: 12px 0;
+  box-shadow: var(--shadow-screen);
+  min-height: 11rem;
+
 }
 
 .player-card__show {
-  font-size: 18px;
-  font-weight: 700;
+  color: var(--dark);
 }
 
 .player-card__date {
-  margin-top: 24px;
-  font-size: 13px;
-  opacity: 0.7;
+  margin: 0
 }
+
 
 .player-card__controls {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-}
-
-.player-card__mixcloud {
-  flex: 1 1 100%;
-  text-align: center;
-  padding: 10px;
-  border-radius: var(--radius-sm);
-  background: var(--dark);
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 13px;
-}
-
-.player-card__transport {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.player-card__transport button {
-  background: var(--accent-2);
-  color: var(--light);
-  border-radius: 999px;
-  width: 40px;
-  height: 40px;
-}
-
-.player-card__play {
-  width: 56px !important;
-  height: 56px !important;
-  font-size: 18px;
+  width: 100%;
+  justify-content: space-between;
+  gap: var(--space-1-5);
+  background: var(--gradient-primary);
+  padding: var(--space-1) var(--space-1-5);
+  border-color: var(--skeuomorphism-stroke);
+  border-width: 2px 2px 0 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-skeuomorphism-inverted);
 }
 
 .player-card__extra {
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
-.player-card__share {
-  background: var(--accent-1);
-  color: var(--primary);
-  border-radius: var(--radius-sm);
-  padding: 8px 14px;
-  font-weight: 600;
-  font-size: 13px;
+.controls {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-1-5);
 }
 
-.player-card__download {
-  background: var(--accent-2);
-  color: var(--light);
-  border-radius: var(--radius-sm);
-  padding: 8px 14px;
-  font-weight: 600;
-  font-size: 13px;
+@media (max-width: 900px) {
+  .player-card__controls {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-1) var(--space-0-5);
+  }
+
+  .player-card__extra {
+    width: 100%;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 }
+
+
+

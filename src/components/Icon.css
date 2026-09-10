@@ -2,9 +2,16 @@
     display: inline-block;
     width: 1rem;
     height: 1rem;
+}
+
+.has-content {
     width: 100%;
 }
 
 img {
     height: 100%;
+}
+
+.has-content.large {
+    height: 2.5rem!important;
 }

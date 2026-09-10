@@ -155,7 +155,7 @@ h4 {
 /* alternative display style for h2/h4 */
 .h2--alt,
 .h4--alt {
-  font-family: var(--font-heading);
+  font-family: var(--font-tech);
   font-weight: 900;
 }
 
@@ -198,7 +198,7 @@ a {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   h1 {
     font-size: 2rem;
   }
