@@ -1,0 +1,40 @@
+/* .footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 32px;
+  background: #0f2420;
+  color: var(--color-text-light);
+}
+
+.footer__logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.footer__schedule {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.footer__mail {
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--color-header);
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} */

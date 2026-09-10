@@ -1,0 +1,15 @@
+.global-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.global-player--hidden {
+  /* stays in the DOM and "visible" (Mixcloud's widget API requires this), just off-screen */
+  left: -9999px;
+  right: auto;
+}

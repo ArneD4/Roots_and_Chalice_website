@@ -1,0 +1,143 @@
+/* .soundboard {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr;
+  gap: 24px;
+  padding: 32px;
+  align-items: start;
+}
+
+.soundboard__panel {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: left;
+}
+
+.soundboard__side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.soundboard__jingle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.soundboard__jingle {
+  padding: 16px 8px;
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  min-height: 64px;
+}
+
+.soundboard__jingle--red {
+  background: var(--color-red);
+}
+
+.soundboard__jingle--orange {
+  background: var(--color-orange);
+  color: var(--color-teal);
+}
+
+.soundboard__jingle--teal {
+  background: var(--color-teal);
+}
+
+.soundboard__crossover {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.toggle__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.toggle__track {
+  display: inline-flex;
+  align-items: center;
+  width: 56px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  padding: 3px;
+}
+
+.toggle__thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-red);
+  margin-left: auto;
+}
+
+.soundboard__siren-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.soundboard__knobs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.knob__dial {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.knob__indicator {
+  width: 4px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--color-red);
+}
+
+.knob__label {
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.75;
+}
+
+@media (max-width: 1100px) {
+  .soundboard {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+} */

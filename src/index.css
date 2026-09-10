@@ -1,0 +1,76 @@
+:root {
+  --color-bg: #faf0d3;
+  --color-header: #2f5d52;
+  --color-header-light: #3c6d61;
+  --color-card: #efe9d3;
+  --color-card-dark: #1e3d38;
+  --color-text: #1e3d38;
+  --color-text-light: #faf0d3;
+  --color-red: #e2645c;
+  --color-orange: #eda43a;
+  --color-teal: #1e3d38;
+  --color-cream: #f6ecc9;
+  --color-border: #d8cfa8;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 4px;
+
+  --font-heading: 'Doto', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+  --font-sans: system-ui, 'Space Grotesk', Roboto, sans-serif;
+  --font-body: system-ui, 'IBM Plex Sans', Roboto, sans-serif;
+  --font-tech: system-ui, 'Doto', ui-monospace, monospace;
+
+  font: 16px/145% var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+
+h4 {
+  font-family: var(--font-heading);
+}
+
+p {
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  font-family: var(--font-sans);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}

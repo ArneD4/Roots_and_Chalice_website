@@ -1,0 +1,96 @@
+/* .player-card {
+  background: var(--color-header);
+  color: var(--color-text-light);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.player-card__title {
+  color: var(--color-text-light);
+  font-size: 20px;
+}
+
+.player-card__screen {
+  background: var(--color-cream);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-family: var(--font-mono);
+  text-align: left;
+  min-height: 90px;
+  margin: 12px 0;
+}
+
+.player-card__show {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.player-card__date {
+  margin-top: 24px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.player-card__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-card__mixcloud {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  background: #0f2420;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.player-card__transport {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-card__transport button {
+  background: var(--color-red);
+  color: #fff;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+}
+
+.player-card__play {
+  width: 56px !important;
+  height: 56px !important;
+  font-size: 18px;
+}
+
+.player-card__extra {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.player-card__share {
+  background: var(--color-orange);
+  color: var(--color-teal);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.player-card__download {
+  background: var(--color-red);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 13px;
+} */
