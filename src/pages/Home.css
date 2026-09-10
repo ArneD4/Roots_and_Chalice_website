@@ -77,6 +77,9 @@
 }
 
 .home__most-played {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
   background: var(--gradient-primary);
   color: var(--light);
   border-color: var(--skeuomorphism-stroke-color);
@@ -90,17 +93,7 @@
   color: var(--light);
 }
 
-.home__all-shows {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--dark);
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 13px;
-}
+
 
 @media (max-width: 900px) {
   .home {
@@ -116,8 +109,9 @@
   }
 
   .big_logo {
-    height: var(--space-2)!important;
+    height: auto;
     width: 100%;
+    border: 1px solid red;
   }
 
 

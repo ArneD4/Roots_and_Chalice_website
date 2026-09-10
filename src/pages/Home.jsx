@@ -22,13 +22,14 @@ function Home() {
   const mostPlayed = [...shows]
     .sort((a, b) => b.playCount - a.playCount)
     .slice(0, 3);
+    
 
   return (
     <div className="home">
       <section className="home__intro">
         <div className="home__intro_inner">
           <div className="intro">
-            <img src="./logo/big.svg" alt="big_logo" />
+            <img src="./logo/big.svg" alt="big_logo" class="big_logo"/>
             <p className="home__description">
               Jongeren uit België op een muzikale missie voor vrede, liefde,
               eenheid en begrip. We zenden wekelijks een{" "}
@@ -74,7 +75,7 @@ function Home() {
           <h2>Meest beluisterde shows</h2>
           <ShowList shows={mostPlayed} />
           <Button
-            variant="secondary"
+            variant="primary"
             content="Bekijk alle shows"
             icon="Right"
             href="/archief"

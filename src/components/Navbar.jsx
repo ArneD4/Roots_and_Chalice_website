@@ -38,27 +38,29 @@ function Navbar() {
         </span>
       </a>
 
-      <nav className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
-        {links.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            className={({ isActive }) =>
-              `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-            }
-            onClick={() => setMenuOpen(false)}
-          >
-            {link.label}
-          </NavLink>
-        ))}
-        <span className="navbar__live">Live on air</span>
-      </nav>
+      <div className={`navbar__menu ${menuOpen ? 'navbar__menu--open' : ''}`}>
+        <nav className="navbar__links">
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+              }
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+          <span className="navbar__live">Live on air</span>
+        </nav>
 
-      <div className="navbar__actions">
-        <Button variant="secondary" icon="Mixcloud" href="https://www.mixcloud.com/Roots_and_Chalice/" aria-label="Mixcloud" target='blank'/>
-        <Button variant="secondary" icon="Instagram" href="https://www.instagram.com/rootsandchalice_radioshow/" aria-label="Instagram" target='blank'/>
-        <Button variant="secondary" icon="Facebook" href="https://www.facebook.com/profile.php?id=100063773671400" aria-label="Facebook" />
-        <Button variant="secondary" icon="Mail" href="mailto:contact@rootsandchalice.be" aria-label="Mail ons" />
+        <div className="navbar__actions">
+          <Button variant="secondary" icon="Mixcloud" href="https://www.mixcloud.com/Roots_and_Chalice/" aria-label="Mixcloud" target='blank'/>
+          <Button variant="secondary" icon="Instagram" href="https://www.instagram.com/rootsandchalice_radioshow/" aria-label="Instagram" target='blank'/>
+          <Button variant="secondary" icon="Facebook" href="https://www.facebook.com/profile.php?id=100063773671400" aria-label="Facebook" />
+          <Button variant="secondary" icon="Mail" href="mailto:contact@rootsandchalice.be" aria-label="Mail ons" />
+        </div>
       </div>
 
       <button

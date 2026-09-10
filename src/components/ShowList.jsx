@@ -1,5 +1,6 @@
 import { usePlayer } from '../context/PlayerContext'
 import './ShowList.css'
+import Button from './Button'
 
 function ShowList({ shows }) {
   const { playShow } = usePlayer()
@@ -13,15 +14,8 @@ function ShowList({ shows }) {
             <p className="show-list__date label">{show.date}</p>
           </div>
           <div className="show-list__actions">
-            <button type="button" className="show-btn" onClick={() => playShow(show)}>
-              play ▶
-            </button>
-            <button type="button" className="btn" aria-label="Share">
-              ⬆
-            </button>
-            {/* <button type="button" className="btn" aria-label="Download">
-              ⬇
-            </button> */}
+            <Button variant="tertiary" content="Play" icon="Play" onClick={() => playShow(show)}></Button>
+            <Button variant="secondary" content="Share" icon="Share" onClick={() => playShow(show)}></Button>
           </div>
         </li>
       ))}
