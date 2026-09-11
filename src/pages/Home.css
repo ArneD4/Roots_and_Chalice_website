@@ -94,6 +94,20 @@
   color: var(--light);
 }
 
+.home__most-played .show-list__actions {
+  display: grid;
+}
+
+
+@media (max-width: 480px) {
+  .home__player-section {
+    padding-inline: var(--space-1);
+  }
+
+  .home__most-played {
+    padding: var(--space-1);
+  }
+}
 
 
 @media (max-width: 900px) {
