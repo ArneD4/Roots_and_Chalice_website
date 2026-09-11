@@ -28,7 +28,6 @@ export async function fetchShows() {
       url: show.url
     }))
     shows.push(...mapped)
-
     url = data.paging.next
   }
 

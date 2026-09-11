@@ -8,12 +8,6 @@
   z-index: 100;
 }
 
-.global-player--hidden {
-  /* stays in the DOM and "visible" (Mixcloud's widget API requires this), just off-screen */
-  left: -9999px;
-  right: auto;
-}
-
 /* ---- Mini player buttons (fill in from Figma "Mini Player" component) ---- */
 /* not yet wired to any transport logic - styling scaffold only */
 /* TODO: .player-btn--play { } */

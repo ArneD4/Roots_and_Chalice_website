@@ -36,3 +36,20 @@
   gap: 6px;
   flex-shrink: 0;
 }
+
+.show-list__actions__top {
+  display: flex;
+  gap: var(--space-0-5);
+}
+
+
+@media (max-width: 900px) {
+  .show-list__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .show-list__actions {
+    display: grid;
+    margin-top: var(--space-0-5);
+  }
+}

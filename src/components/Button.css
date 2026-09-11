@@ -6,20 +6,21 @@ button {
 
 /* ---- Button variants (fill in from Figma "Button" component) ---- */
 .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: var(--shadow-skeuomorphism);
   color: var(--primary-light);
-  height: 2.5rem;
+  /* height: 2.5rem; */
   padding: 0.5rem 1rem;
   gap: var(--space-0-5);
   border-color: var(--skeuomorphism-stroke-color);
   border-width: 0 0 2px 2px;
   border-radius: var(--radius-sm);
   text-decoration: none;
-  white-space: nowrap;
-  
+  white-space: normal;
+  word-break: break-word;
+  width: fit-content;
 }
 
 .btn-primary { 
@@ -36,8 +37,8 @@ button {
 }
 
 .btn-bigPlayButton {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   background: var(--accent-2);
   color: var(--light);

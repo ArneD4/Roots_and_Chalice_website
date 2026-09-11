@@ -9,8 +9,23 @@ const links = [
   { to: '/soundboard', label: 'Soundboard' },
 ]
 
+function isLiveOnAir(now = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Brussels',
+    weekday: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(now)
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]))
+  const minutes = Number(values.hour) * 60 + Number(values.minute)
+
+  return values.weekday === 'Tue' && minutes >= 21 * 60 && minutes < 22 * 60 + 30
+}
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [liveOnAir, setLiveOnAir] = useState(() => isLiveOnAir())
   // 2. Track width in state so React reacts to changes
   const [windowWidth, setWindowWidth] = useState(window.innerWidth) 
 
@@ -24,16 +39,31 @@ function Navbar() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  useEffect(() => {
+    const updateLiveStatus = () => setLiveOnAir(isLiveOnAir())
+    const delayUntilNextMinute = 60_000 - (Date.now() % 60_000)
+    let intervalId
+    const timeoutId = window.setTimeout(() => {
+      updateLiveStatus()
+      intervalId = window.setInterval(updateLiveStatus, 60_000)
+    }, delayUntilNextMinute)
+
+    return () => {
+      window.clearTimeout(timeoutId)
+      window.clearInterval(intervalId)
+    }
+  }, [])
+
   return (
     <header className="navbar">
       <a href="/" className="navbar__logo">
         <span className="navbar__logo-icon" aria-hidden="true">
           {/* 4. Use windowWidth state instead of direct window.innerWidth */}
-          {windowWidth >= 768 && (
-            <img src="./logo/horizontal.svg" alt="logo_horizontal" srcSet="./logo/horizontal.svg" />
+          {windowWidth >= 1000 && (
+            <img src="/logo/horizontal.svg" alt="logo_horizontal" srcSet="/logo/horizontal.svg" />
           )}
-          {windowWidth < 768 && (
-            <img src="./logo/Icon.svg" alt="logo_vertical" srcSet="./logo/Icon.svg" />
+          {windowWidth < 1000 && (
+            <img src="/logo/Icon.svg" alt="logo_vertical" srcSet="/logo/Icon.svg" />
           )}
         </span>
       </a>
@@ -52,7 +82,9 @@ function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <span className="navbar__live">Live on air</span>
+          {liveOnAir && (
+            <a href="https://www.radioscorpio.be/" className="navbar__live">Live on air</a>
+          )}
         </nav>
 
         <div className="navbar__actions">

@@ -1,9 +1,9 @@
-import { usePlayer } from '../context/PlayerContext'
-import './ShowList.css'
-import Button from './Button'
+import { usePlayer } from "../context/PlayerContext";
+import "./ShowList.css";
+import Button from "./Button";
 
 function ShowList({ shows }) {
-  const { playShow } = usePlayer()
+  const { playShow } = usePlayer();
 
   return (
     <ul className="show-list">
@@ -14,13 +14,33 @@ function ShowList({ shows }) {
             <p className="show-list__date label">{show.date}</p>
           </div>
           <div className="show-list__actions">
-            <Button variant="tertiary" content="Play" icon="Play" onClick={() => playShow(show)}></Button>
-            <Button variant="secondary" content="Share" icon="Share" onClick={() => playShow(show)}></Button>
+            <div className="show-list__actions__top">
+              <Button
+                variant="tertiary"
+                content="Play"
+                icon="Play"
+                onClick={() => playShow(show)}
+              ></Button>
+              <Button
+                variant="secondary"
+                content=""
+                icon="Share"
+                onClick={() => playShow(show)}
+              ></Button>
+            </div>
+            <Button
+              variant="primary"
+              content="Luister op  Mixcloud"
+              icon="Play"
+              onClick={() => playShow(show)}
+              href={`${show.url}`}
+              target="blank"
+            ></Button>
           </div>
         </li>
       ))}
     </ul>
-  )
+  );
 }
 
-export default ShowList
+export default ShowList;

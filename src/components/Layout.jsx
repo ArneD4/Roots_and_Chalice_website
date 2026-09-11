@@ -6,7 +6,7 @@ import { usePlayer } from '../context/PlayerContext'
 import './Layout.css'
 
 function Layout() {
-  const { activeShow, bootstrapKey } = usePlayer()
+  const { bootstrapKey } = usePlayer()
 
   return (
     <>
@@ -15,10 +15,11 @@ function Layout() {
         <Outlet />
       </main>
       {bootstrapKey && (
-        <div className={`global-player ${activeShow ? '' : 'global-player--hidden'}`}>
+        <div className="global-player">
           <MixcloudPlayer initialKey={bootstrapKey} mini />
         </div>
       )}
+
       <Footer />
     </>
   )

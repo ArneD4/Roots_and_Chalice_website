@@ -1,19 +1,33 @@
+import { useEffect, useState } from "react";
 import PlayerCard from "../components/PlayerCard";
 import ShowList from "../components/ShowList";
+import { fetchSheetData } from "../services/googleSheets";
 import { useShows } from "../hooks/useShows";
 import "./Home.css";
 import Button from "../components/Button";
 
-const scheduleThisMonth = [
-  { date: "01/01", label: "Leuvense festival special" },
-  { date: "02/02", label: "Concrete Bushman" },
-  { date: "03/03", label: "Word, sound, power" },
-  { date: "04/04", label: "Ruff & Tuff crew special" },
-  { date: "05/05", label: "Roots Vibration" },
-];
+function useSheetData() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchSheetData()
+      .then(setData)
+      .catch(setError)
+      .finally(() => setLoading(false));
+  }, []);
+
+  return { data, loading, error };
+}
 
 function Home() {
   const { shows, loading, error } = useShows();
+  const { data: scheduleThisMonth, error: scheduleError } = useSheetData();
+
+  useEffect(() => {
+    if (!scheduleError) console.log("Current month's schedule:", scheduleThisMonth);
+  }, [scheduleError, scheduleThisMonth]);
 
   if (loading) return <p>Loading shows...</p>;
   if (error) return <p>Something went wrong: {error.message}</p>;
@@ -29,7 +43,7 @@ function Home() {
       <section className="home__intro">
         <div className="home__intro_inner">
           <div className="intro">
-            <img src="./logo/big.svg" alt="big_logo" class="big_logo"/>
+            <img src="./logo/big.svg" alt="big_logo" className="big_logo"/>
             <p className="home__description">
               Jongeren uit België op een muzikale missie voor vrede, liefde,
               eenheid en begrip. We zenden wekelijks een{" "}

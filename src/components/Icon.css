@@ -4,8 +4,13 @@
     height: 1rem;
 }
 
-.has-content {
+.noContent {
+    /* height: 50%; */
     width: 100%;
+}
+
+.noContent img{
+    height: 100%;
 }
 
 img {

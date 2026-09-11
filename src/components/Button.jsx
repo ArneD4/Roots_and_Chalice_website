@@ -4,10 +4,6 @@ import Icon from './Icon'
 function Button({variant, content, icon, href, onClick, size, target, share}) {
   const Tag = href ? 'a' : 'button'
 
-  onClick = () => {
-    console.log(share)
-  }
-
   return (
     <Tag
       className={`btn btn-${variant}`}
