@@ -37,8 +37,8 @@ button {
 }
 
 .btn--copied {
-  background: var(--primary);
-  box-shadow: 0 0 0 2px var(--light), 0 0 12px rgba(255, 240, 200, 0.85);
+  background: var(--accent-2);
+
 }
 
 .btn-bigPlayButton {

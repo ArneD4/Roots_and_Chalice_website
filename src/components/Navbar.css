@@ -15,6 +15,38 @@
   border-width: 0 0 2px 2px;
 }
 
+
+.navbar .screw {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--gradient-primary-light-reverse);
+  border: 1px solid var(--skeuomorphism-stroke);
+  border-radius: 50%;
+  box-shadow: var(--shadow-skeuomorphism);
+}
+
+.navbar .screw-top-left {
+  top: var(--space-0-5);
+  left: var(--space-0-5);
+}
+
+.navbar .screw-top-right {
+  top: var(--space-0-5);
+  right: var(--space-0-5);
+}
+
+.navbar .screw-bottom-left {
+  bottom: var(--space-0-5);
+  left: var(--space-0-5);
+}
+
+.navbar .screw-bottom-right {
+  bottom: var(--space-0-5);
+  right: var(--space-0-5);
+}
+
+
 .navbar__logo {
   display: flex;
   align-items: center;

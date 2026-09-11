@@ -30,13 +30,19 @@ export function PlayerProvider({ children }) {
     setPendingShow(null)
   }, [audioUnlocked, pendingShow])
 
-  function playShow(show) {
-    setActiveShow(show)
-    if (audioUnlocked) {
-      widgetRef.current?.load(show.key, true)
-    } else {
-      setPendingShow(show)
+  async function playShow(show) {
+    const widget = widgetRef.current
+    console.log(show)
+    if (activeShow?.key === show.key) {
+      const isPaused = await widget?.getIsPaused()
+      if (isPaused) widget?.play()
+      return
     }
+
+    setActiveShow(show)
+    await widget?.load(show.key, false)
+    await widget?.seek(0)
+    widget?.play()
   }
 
   return (

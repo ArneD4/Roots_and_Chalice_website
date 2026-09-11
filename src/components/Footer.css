@@ -1,4 +1,5 @@
 .footer {
+  position: relative;
   margin-top: auto;
   display: flex;
   align-items: center;
@@ -6,7 +7,9 @@
   gap: var(--space-1);
   padding: var(--space-3);
   padding-bottom: 5rem;
-  background: var(--dark);
+  background: var(--gradient-dark);
+  border: 1px solid var(--skeuomorphism-stroke);
+  box-shadow: var(--shadow-skeuomorphism);
   color: var(--light);
 }
 

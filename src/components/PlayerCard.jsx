@@ -12,7 +12,9 @@ function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
   const cardTitle = isSelectedShow ? "Je luisterd naar:" : title;
 
   function playAdjacentShow(direction) {
-    const currentIndex = shows.findIndex((item) => item.key === displayedShow.key);
+    const currentIndex = shows.findIndex(
+      (item) => item.key === displayedShow.key,
+    );
     const nextIndex = (currentIndex + direction + shows.length) % shows.length;
     playShow(shows[nextIndex]);
   }
@@ -20,9 +22,17 @@ function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
   return (
     <section className="player-card">
       <div className="player-card_header">
+        <div className="screw screw-top-left"></div>
+        <div className="screw screw-top-right"></div>
+        <div className="screw screw-bottom-left"></div>
+        <div className="screw screw-bottom-right"></div>
         <h2 className="player-card__title">{cardTitle}</h2>
       </div>
       <div className="player-card_content">
+        <div className="screw screw-top-left"></div>
+        <div className="screw screw-top-right"></div>
+        <div className="screw screw-bottom-left"></div>
+        <div className="screw screw-bottom-right"></div>
         <div className="player-card__screen">
           <h2 className="player-card__show h2--alt">{displayedShow.title}</h2>
           <h4 className="player-card__date h4--alt">{displayedShow.date}</h4>

@@ -8,15 +8,109 @@
 }
 
 .home__intro {
+  position: relative;
   background: var(--gradient-dark);
   color: var(--light);
-  border-right: 1px solid var(--skeuomorphism-stroke);
+  border-right: 2px solid var(--skeuomorphism-stroke);
+  border-bottom: 3px solid var(--skeuomorphism-stroke);
+  box-shadow: var(--shadow-skeuomorphism-large);  
   padding: var(--space-2);
   text-align: left;
   height: 100%;
   height: -webkit-fill-available;
   padding: 4.5rem var(--space-2);
   max-width: 39rem;
+}
+
+.screw {
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--gradient-dark-reverse);
+  border: 3px solid var(--skeuomorphism-stroke);
+  border-radius: 50%;
+  box-shadow: var(--shadow-skeuomorphism);
+}
+
+.screw-top-left {
+  top: var(--space-1);
+  left: var(--space-1);
+}
+
+.screw-top-right {
+  top: var(--space-1);
+  right: var(--space-1);
+}
+
+.screw-bottom-left {
+  bottom: var(--space-1);
+  left: var(--space-1);
+}
+
+.screw-bottom-right {
+  bottom: var(--space-1);
+  right: var(--space-1);
+}
+
+.home__player-section .screw {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--gradient-primary-reverse);
+  border: 1px solid var(--skeuomorphism-stroke);
+  border-radius: 50%;
+  box-shadow: var(--shadow-skeuomorphism);
+}
+
+.home__player-section .screw-top-left {
+  top: var(--space-1);
+  left: var(--space-1);
+}
+
+.home__player-section .screw-top-right {
+  top: var(--space-1);
+  right: var(--space-1);
+}
+
+.home__player-section .screw-bottom-left {
+  bottom: var(--space-1);
+  left: var(--space-1);
+}
+
+.home__player-section .screw-bottom-right {
+  bottom: var(--space-1);
+  right: var(--space-1);
+}
+
+.home__most-played .screw {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--gradient-primary-light-reverse);
+  border: 1px solid var(--skeuomorphism-stroke);
+  border-radius: 50%;
+  box-shadow: var(--shadow-skeuomorphism);
+}
+
+
+.home__most-played .screw-top-left {
+  top: var(--space-1);
+  left: var(--space-1);
+}
+
+.home__most-played .screw-top-right {
+  top: var(--space-0-5);
+  right: var(--space-1);
+}
+
+.home__most-played .screw-bottom-left {
+  bottom: var(--space-1);
+  left: var(--space-1);
+}
+
+.home__most-played .screw-bottom-right {
+  bottom: var(--space-1);
+  right: var(--space-1);
 }
 
 .home__intro_inner {
@@ -60,6 +154,13 @@
   padding: 0;
 }
 
+.calendar h3 {
+  color: var(--light);
+  text-shadow: 
+    0px 2px 2px var(--dark),  /* light edge below = highlight */
+    0px -2px 2px var(--skeuomorphism-stroke);        /* dark edge above = shadow */
+}
+
 .calendar_inner li {
   padding: var(--space-1) 0;
   border-bottom: 1px solid var(--primary-light);
@@ -76,6 +177,7 @@
 
 
 .home__player-section {
+  position: relative;
   container-type: inline-size;
   container-name: player-section;
   display: flex;
@@ -89,20 +191,24 @@
 }
 
 .home__most-played {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
   background: var(--gradient-primary);
   color: var(--light);
-  border-color: var(--skeuomorphism-stroke-color);
-  border-width: 0 0 2px 2px;
+  border-right: 2px solid var(--skeuomorphism-stroke);
+  border-bottom: 3px solid var(--skeuomorphism-stroke);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-skeuomorphism-large);  
-  padding: var(--space-1-5);
+  padding: var(--space-2);
 }
 
 .home__most-played h2 {
   color: var(--light);
+  text-shadow: 
+    0px 2px 2px var(--dark),  /* light edge below = highlight */
+    0px -2px 2px var(--skeuomorphism-stroke);        /* dark edge above = shadow */
 }
 
 
@@ -117,7 +223,7 @@
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .home {
     padding: 0;
     flex-direction: column;

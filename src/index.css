@@ -87,7 +87,7 @@
     inset 0px 4px 8px 0px rgba(0, 0, 0, 0.8),
     inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
 
-  --shadow-dropshadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.5);
+  --shadow-dropshadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.7);
 
   --shadow-on-air: 0px 0px 15px 0px rgba(255, 180, 171, 1);
 
@@ -130,7 +130,9 @@ h3 {
   line-height: 1.2;
   color: var(--primary);
   margin: 0 0 8px;
+  word-break: normal;
 }
+
 
 h1 {
   font-size: 4rem;
@@ -219,3 +221,4 @@ a {
     font-size: 0.75rem;
   }
 }
+

@@ -56,6 +56,10 @@ function Navbar() {
 
   return (
     <header className="navbar">
+      <div className="screw screw-top-left"></div>
+      <div className="screw screw-top-right"></div>
+      <div className="screw screw-bottom-left"></div>
+      <div className="screw screw-bottom-right"></div>
       <a href="/" className="navbar__logo">
         <span className="navbar__logo-icon" aria-hidden="true">
           {/* 4. Use windowWidth state instead of direct window.innerWidth */}
@@ -90,7 +94,7 @@ function Navbar() {
         <div className="navbar__actions">
           <Button variant="secondary" icon="Mixcloud" href="https://www.mixcloud.com/Roots_and_Chalice/" aria-label="Mixcloud" target='blank'/>
           <Button variant="secondary" icon="Instagram" href="https://www.instagram.com/rootsandchalice_radioshow/" aria-label="Instagram" target='blank'/>
-          <Button variant="secondary" icon="Facebook" href="https://www.facebook.com/profile.php?id=100063773671400" aria-label="Facebook" />
+          <Button variant="secondary" icon="Facebook" href="https://www.facebook.com/profile.php?id=100063773671400" aria-label="Facebook" target='blank'/>
           <Button variant="secondary" icon="Mail" href="mailto:contact@rootsandchalice.be" aria-label="Mail ons" />
         </div>
       </div>
