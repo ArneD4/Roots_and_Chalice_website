@@ -82,7 +82,7 @@ function Archief() {
         )}
       </section>
       <section className="player-card__wrapper">
-        <PlayerCard show={shows[0]} shows={shows} />
+        <PlayerCard show={shows[0]} shows={shows} className="player-card" />
       </section>
     </div>
   )
