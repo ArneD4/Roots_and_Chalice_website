@@ -25,7 +25,7 @@ function ShowList({ shows }) {
                 variant="secondary"
                 content=""
                 icon="Share"
-                onClick={() => playShow(show)}
+                share={show.url}
               ></Button>
             </div>
             <Button

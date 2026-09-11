@@ -3,7 +3,7 @@ import { usePlayer } from '../context/PlayerContext'
 
 function MixcloudPlayer({ initialKey, mini = false }) {
   const iframeRef = useRef(null)
-  const { registerWidget } = usePlayer()
+  const { registerWidget, unlockAudio } = usePlayer()
 
   // locked in once on mount: later show switches go through widget.load(), not a new src
   const [src] = useState(
@@ -15,6 +15,15 @@ function MixcloudPlayer({ initialKey, mini = false }) {
     const widget = window.Mixcloud.PlayerWidget(iframeRef.current)
     widget.ready.then(() => registerWidget(widget))
   }, [registerWidget])
+
+  useEffect(() => {
+    function detectDirectPlayerInteraction() {
+      if (document.activeElement === iframeRef.current) unlockAudio()
+    }
+
+    window.addEventListener('blur', detectDirectPlayerInteraction)
+    return () => window.removeEventListener('blur', detectDirectPlayerInteraction)
+  }, [unlockAudio])
 
   const height = mini ? 60 : 120
 

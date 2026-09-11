@@ -83,7 +83,7 @@ function Home() {
       </section>
 
       <section className="home__player-section">
-        <PlayerCard show={latestShow} />
+        <PlayerCard show={latestShow} shows={shows} />
 
         <div className="home__most-played">
           <h2>Meest beluisterde shows</h2>

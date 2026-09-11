@@ -3,8 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 24px 32px;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  padding-bottom: 5rem;
   background: var(--dark);
   color: var(--light);
 }
@@ -16,11 +17,20 @@
 }
 
 .footer__schedule {
-  margin-top: 8px;
-  font-size: 13px;
-  opacity: 0.8;
-  line-height: 1.5;
+  font-family: var(--font-mono);
+  margin-top: var(--space-0-5);
+  font-size: 11px;
+  line-height: 1.2;
 }
+
+.footer__schedule img {
+  display: block;
+  margin-top: var(--space-0-5);
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 .footer__mail {
   padding: 10px 18px;

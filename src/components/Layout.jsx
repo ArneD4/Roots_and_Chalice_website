@@ -6,7 +6,7 @@ import { usePlayer } from '../context/PlayerContext'
 import './Layout.css'
 
 function Layout() {
-  const { bootstrapKey } = usePlayer()
+  const { audioUnlocked, bootstrapKey } = usePlayer()
 
   return (
     <>
@@ -16,6 +16,11 @@ function Layout() {
       </main>
       {bootstrapKey && (
         <div className="global-player">
+          {!audioUnlocked && (
+            <div className="global-player__activation">
+              <p className="global-player__activation-text caption">Klik hier om audio te activeren</p>
+            </div>
+          )}
           <MixcloudPlayer initialKey={bootstrapKey} mini />
         </div>
       )}

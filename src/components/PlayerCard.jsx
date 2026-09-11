@@ -2,7 +2,7 @@ import { usePlayer } from "../context/PlayerContext";
 import "./PlayerCard.css";
 import Button from "./Button";
 
-function PlayerCard({ title = "Herbeluister de laatste show", show }) {
+function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
   const { activeShow, playShow } = usePlayer();
 
   if (!show) return null;
@@ -10,6 +10,12 @@ function PlayerCard({ title = "Herbeluister de laatste show", show }) {
   const displayedShow = activeShow ?? show;
   const isSelectedShow = activeShow && activeShow.key !== show.key;
   const cardTitle = isSelectedShow ? "Je luisterd naar:" : title;
+
+  function playAdjacentShow(direction) {
+    const currentIndex = shows.findIndex((item) => item.key === displayedShow.key);
+    const nextIndex = (currentIndex + direction + shows.length) % shows.length;
+    playShow(shows[nextIndex]);
+  }
 
   return (
     <section className="player-card">
@@ -34,10 +40,7 @@ function PlayerCard({ title = "Herbeluister de laatste show", show }) {
             ></Button>
             <Button
               variant="tertiary"
-              href={displayedShow.url}
-              target="_blank"
-              rel="noreferrer"
-              content="Share"
+              content=""
               icon="Share"
               share={displayedShow.url}
             ></Button>
@@ -46,7 +49,7 @@ function PlayerCard({ title = "Herbeluister de laatste show", show }) {
             <Button
               variant="tertiary"
               icon="Previous"
-              // size="large"
+              onClick={() => playAdjacentShow(-1)}
             ></Button>
             <Button
               className="player-card__play"
@@ -55,10 +58,10 @@ function PlayerCard({ title = "Herbeluister de laatste show", show }) {
               icon="Play"
               size="large"
             ></Button>
-                        <Button
+            <Button
               variant="tertiary"
               icon="Next"
-              // size="large"
+              onClick={() => playAdjacentShow(1)}
             ></Button>
           </div>
         </div>

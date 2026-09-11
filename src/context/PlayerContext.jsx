@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { fetchBootstrapKey } from '../services/mixcloud'
 
 const PlayerContext = createContext(null)
@@ -6,6 +6,8 @@ const PlayerContext = createContext(null)
 export function PlayerProvider({ children }) {
   const [activeShow, setActiveShow] = useState(null)
   const [bootstrapKey, setBootstrapKey] = useState(null)
+  const [audioUnlocked, setAudioUnlocked] = useState(false)
+  const [pendingShow, setPendingShow] = useState(null)
   const widgetRef = useRef(null)
 
   // silently mount a widget on page load so it's already ready by the first play click
@@ -13,18 +15,32 @@ export function PlayerProvider({ children }) {
     fetchBootstrapKey().then(setBootstrapKey)
   }, [])
 
-  function registerWidget(widget) {
+  const registerWidget = useCallback((widget) => {
     widgetRef.current = widget
-  }
+  }, [])
+
+  const unlockAudio = useCallback(() => {
+    setAudioUnlocked(true)
+  }, [])
+
+  useEffect(() => {
+    if (!audioUnlocked || !pendingShow) return
+
+    widgetRef.current?.load(pendingShow.key, true)
+    setPendingShow(null)
+  }, [audioUnlocked, pendingShow])
 
   function playShow(show) {
     setActiveShow(show)
-    // calling load() synchronously here (inside the click handler) keeps the browser's autoplay gesture intact
-    widgetRef.current?.load(show.key, true)
+    if (audioUnlocked) {
+      widgetRef.current?.load(show.key, true)
+    } else {
+      setPendingShow(show)
+    }
   }
 
   return (
-    <PlayerContext.Provider value={{ activeShow, playShow, registerWidget, bootstrapKey }}>
+    <PlayerContext.Provider value={{ activeShow, audioUnlocked, bootstrapKey, playShow, registerWidget, unlockAudio }}>
       {children}
     </PlayerContext.Provider>
   )

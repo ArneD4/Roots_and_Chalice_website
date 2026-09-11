@@ -10,9 +10,11 @@
 .home__intro {
   background: var(--gradient-dark);
   color: var(--light);
+  border-right: 1px solid var(--skeuomorphism-stroke);
   padding: var(--space-2);
   text-align: left;
   height: 100%;
+  height: -webkit-fill-available;
   padding: 4.5rem var(--space-2);
   max-width: 39rem;
 }
@@ -25,6 +27,11 @@
     gap: var(--space-4);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-skeuomorphism-large-inverted);
+}
+
+.big_logo {
+  width: 100%;
+  height: auto;
 }
 
 .home__intro h3 {
@@ -69,12 +76,16 @@
 
 
 .home__player-section {
+  container-type: inline-size;
+  container-name: player-section;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-2);
   width: 100%;
-  /* max-width: 700px; */
+  max-width: 1000px; 
+  margin: auto;
+
 }
 
 .home__most-played {
@@ -92,10 +103,6 @@
 
 .home__most-played h2 {
   color: var(--light);
-}
-
-.home__most-played .show-list__actions {
-  display: grid;
 }
 
 

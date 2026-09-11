@@ -57,11 +57,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 100%;
   justify-content: space-between;
   gap: var(--space-1-5);
-  background: var(--gradient-primary);
   padding: var(--space-1) var(--space-1-5);
+  background: var(--gradient-primary);
   border-color: var(--skeuomorphism-stroke);
   border-width: 2px 2px 0 0;
   border-radius: var(--radius-md);
@@ -70,7 +69,7 @@
 
 .player-card__extra {
   display: inline-flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: var(--space-1);
 }
 
@@ -81,17 +80,16 @@
   gap: var(--space-1-5);
 }
 
-@media (max-width: 900px) {
+@container player-section (max-width: 700px) {
   .player-card__controls {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: var(--space-1) var(--space-0-5);
   }
-
-  .player-card__extra {
-    width: 100%;
+  .controls {
+        gap: var(--space-0-5);
   }
-  
 }
+
 
 
