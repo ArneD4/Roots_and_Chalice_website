@@ -198,7 +198,7 @@
   background: var(--gradient-primary);
   color: var(--light);
   border-right: 2px solid var(--skeuomorphism-stroke);
-  border-bottom: 3px solid var(--skeuomorphism-stroke);
+  border-bottom: 2px solid var(--skeuomorphism-stroke);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-skeuomorphism-large);  
   padding: var(--space-2);

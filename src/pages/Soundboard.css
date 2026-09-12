@@ -1,16 +1,49 @@
 .soundboard {
   display: grid;
   grid-template-columns: 1.4fr 0.8fr 1fr;
-  gap: 24px;
-  padding: 32px;
+  gap: var(--space-1);
+  padding: var(--space-1-5);
   align-items: start;
 }
 
 .soundboard__panel {
+  position: relative;
   background: var(--primary-light);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: var(--space-1);
   text-align: left;
+  border-right: 2px solid var(--skeuomorphism-stroke);
+  border-bottom: 2px solid var(--skeuomorphism-stroke);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-skeuomorphism-large);  
+  padding: var(--space-2);
+}
+
+.soundboard__panel .screw {
+  background: var(--primary-light);
+  width: 0.3rem;
+  height: 0.3rem;
+
+}
+
+.soundboard__panel .screw-top-left {
+  top: var(--space-1);
+  left: var(--space-1);
+}
+
+.soundboard__panel .screw-top-right {
+  top: var(--space-1);
+  right: var(--space-1);
+}
+
+.soundboard__panel .screw-bottom-left {
+  bottom: var(--space-1);
+  left: var(--space-1);
+}
+
+.soundboard__panel .screw-bottom-right {
+  bottom: var(--space-1);
+  right: var(--space-1);
 }
 
 .soundboard__side {
@@ -33,6 +66,13 @@
   font-size: 13px;
   text-align: center;
   min-height: 64px;
+    box-shadow: var(--shadow-skeuomorphism);
+  color: var(--primary-light);
+  /* height: 2.5rem; */
+  padding: 0.5rem 1rem;
+  border-color: var(--skeuomorphism-stroke-color);
+  border-width: 0 0 2px 2px;
+  border-radius: var(--radius-md);
 }
 
 .soundboard__jingle--red {

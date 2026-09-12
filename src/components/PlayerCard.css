@@ -56,7 +56,7 @@
   border-bottom-right-radius: var(--radius-md);
   border-bottom-left-radius: var(--radius-md);
   border-right: 2px solid var(--skeuomorphism-stroke);
-  border-bottom: 3px solid var(--skeuomorphism-stroke);
+  border-bottom: 2px solid var(--skeuomorphism-stroke);
   gap: var(--space-1-5);
 }
 

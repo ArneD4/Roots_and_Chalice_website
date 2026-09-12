@@ -45,6 +45,10 @@ function Soundboard() {
   return (
     <div className="soundboard">
       <section className="soundboard__panel soundboard__jingles">
+          <div className="screw screw-top-left"></div>
+          <div className="screw screw-top-right"></div>
+          <div className="screw screw-bottom-left"></div>
+          <div className="screw screw-bottom-right"></div>
         <h2>Jingles</h2>
         <div className="soundboard__jingle-grid">
           {jingles.map((jingle) => (
@@ -60,6 +64,10 @@ function Soundboard() {
       </section>
 
       <section className="soundboard__panel soundboard__crossover">
+                  <div className="screw screw-top-left"></div>
+          <div className="screw screw-top-right"></div>
+          <div className="screw screw-bottom-left"></div>
+          <div className="screw screw-bottom-right"></div>
         <h2>X-Over</h2>
         {crossoverBands.map((band) => (
           <Toggle key={band} label={band.toUpperCase()} />
@@ -68,6 +76,10 @@ function Soundboard() {
 
       <div className="soundboard__side">
         <section className="soundboard__panel soundboard__siren">
+          <div className="screw screw-top-left"></div>
+          <div className="screw screw-top-right"></div>
+          <div className="screw screw-bottom-left"></div>
+          <div className="screw screw-bottom-right"></div>
           <h2>Siren</h2>
           <button type="button" className="soundboard__siren-btn" aria-label="Siren">
             ✻
@@ -80,6 +92,10 @@ function Soundboard() {
         </section>
 
         <section className="soundboard__panel soundboard__delay">
+          <div className="screw screw-top-left"></div>
+          <div className="screw screw-top-right"></div>
+          <div className="screw screw-bottom-left"></div>
+          <div className="screw screw-bottom-right"></div>
           <h2>Delay</h2>
           <Toggle label="DELAY OFF/ONN" />
           <div className="soundboard__knobs">

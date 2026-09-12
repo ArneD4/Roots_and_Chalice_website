@@ -135,10 +135,10 @@
   position: absolute;
   right: 0;
   display: block;
-  height: 2px;
+  height: 4px;
   width: var(--space-2);
-  background: var(--light);
-  border-radius: 2px;
+  background: var(--primary-light);
+  border-radius: 4px;
   transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
 }
 
