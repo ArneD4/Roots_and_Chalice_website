@@ -5,7 +5,7 @@
   /* padding: var(--space-2); */
   align-items: start;
   width: 100%;
-  /* background: var(--gradient-primary-reverse); */
+  background: var(--gradient-primary-reverse);
 }
 
 .archief__list {
@@ -62,11 +62,11 @@
 
 .archief__search {
   box-shadow: var(--shadow-skeuomorphism-inverted);
-  color: var(--accent-1);
+  color: var(--primary);
 }
 
 .archief__search::placeholder {
-  color: var(--accent-1);
+  color: var(--primary);
 }
 
 .archief__sort {

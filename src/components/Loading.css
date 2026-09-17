@@ -1,0 +1,13 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+}
+
+.loading__image {
+    width: var(--space-3);
+    height: auto;
+}

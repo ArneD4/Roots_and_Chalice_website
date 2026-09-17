@@ -53,4 +53,5 @@ button {
   box-shadow: var(--shadow-skeuomorphism-inverted);
   border-color: var(--skeuomorphism-stroke-color);
   border-width: 2px 2px 0 0 ;
+  transform: translateY(2px);
 }

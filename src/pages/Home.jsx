@@ -5,6 +5,7 @@ import { fetchSheetData } from "../services/googleSheets";
 import { useShows } from "../hooks/useShows";
 import "./Home.css";
 import Button from "../components/Button";
+import Loading from "../components/Loading";
 
 function useSheetData() {
   const [data, setData] = useState([]);
@@ -30,8 +31,8 @@ function Home() {
       console.log("Current month's schedule:", scheduleThisMonth);
   }, [scheduleError, scheduleThisMonth]);
 
-  if (loading) return <p>Loading shows...</p>;
-  if (error) return <p>Something went wrong: {error.message}</p>;
+  if (loading) return <Loading loading={loading} error={false} />;
+  if (error) return <Loading loading={loading} error={true} message={error.message} />;
 
   const latestShow = shows[0];
   const mostPlayed = [...shows]

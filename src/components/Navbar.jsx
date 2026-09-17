@@ -6,7 +6,6 @@ import Button from './Button'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/archief', label: 'Archief' },
-  { to: '/soundboard', label: 'Soundboard' },
 ]
 
 function isLiveOnAir(now = new Date()) {
