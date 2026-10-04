@@ -72,7 +72,7 @@ function Home() {
           <div className="home__cta">
             <Button
               variant="secondary"
-              content="Ontedek het archief"
+              content="Ontdek het archief"
               icon="Right"
               href="/archief"
             ></Button>

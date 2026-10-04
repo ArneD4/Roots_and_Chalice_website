@@ -1,45 +1,51 @@
-import { useState } from 'react'
-import PlayerCard from '../components/PlayerCard'
-import ShowList from '../components/ShowList'
-import { useShows } from '../hooks/useShows'
-import './Archief.css'
+import { useState } from "react";
+import PlayerCard from "../components/PlayerCard";
+import ShowList from "../components/ShowList";
+import { useShows } from "../hooks/useShows";
+import "./Archief.css";
+import Loading from "../components/Loading";
 
 function sortShows(shows, sortBy) {
-  const sorted = [...shows]
+  const sorted = [...shows];
   switch (sortBy) {
-    case 'oldest':
-      return sorted.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
-    case 'trending':
-    case 'popular':
-      return sorted.sort((a, b) => b.playCount - a.playCount)
-    case 'latest':
+    case "oldest":
+      return sorted.sort(
+        (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
+      );
+    case "trending":
+    case "popular":
+      return sorted.sort((a, b) => b.playCount - a.playCount);
+    case "latest":
     default:
-      return sorted.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      return sorted.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+      );
   }
 }
 
 function Archief() {
-  const { shows, loading, error } = useShows()
-  const [query, setQuery] = useState('')
-  const [sortBy, setSortBy] = useState('latest')
-  const [visibleCount, setVisibleCount] = useState(12)
+  const { shows, loading, error } = useShows();
+  const [query, setQuery] = useState("");
+  const [sortBy, setSortBy] = useState("latest");
+  const [visibleCount, setVisibleCount] = useState(12);
 
-  if (loading) return <p>Loading shows...</p>
-  if (error) return <p>Something went wrong: {error.message}</p>
+  if (loading) return <Loading loading={loading} error={false} />;
+  if (error)
+    return <Loading loading={loading} error={true} message={error.message} />;
 
   const filteredShows = sortShows(shows, sortBy).filter((show) =>
     show.title.toLowerCase().includes(query.toLowerCase()),
-  )
-  const visibleShows = filteredShows.slice(0, visibleCount)
+  );
+  const visibleShows = filteredShows.slice(0, visibleCount);
 
   function handleSortChange(event) {
-    setSortBy(event.target.value)
-    setVisibleCount(12)
+    setSortBy(event.target.value);
+    setVisibleCount(12);
   }
 
   function handleQueryChange(event) {
-    setQuery(event.target.value)
-    setVisibleCount(12)
+    setQuery(event.target.value);
+    setVisibleCount(12);
   }
 
   return (
@@ -85,8 +91,7 @@ function Archief() {
         <PlayerCard show={shows[0]} shows={shows} className="player-card" />
       </section>
     </div>
-  )
+  );
 }
 
-export default Archief
-
+export default Archief;

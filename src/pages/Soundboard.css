@@ -1,6 +1,7 @@
 .soundboard {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100%;
 }
 
@@ -268,7 +269,7 @@
 @media (max-width: 1100px) {
   .soundboard {
     grid-template-columns: 1fr;
-    padding: 16px;
+    /* padding: 16px; */
   }
 }
 
