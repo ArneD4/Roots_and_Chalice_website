@@ -8,4 +8,10 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  // PHP doesn't run in the dev server: fetch the planning from the live site
+  server: {
+    proxy: {
+      '/planning.php': { target: 'https://rootsandchalice.be', changeOrigin: true },
+    },
+  },
 })

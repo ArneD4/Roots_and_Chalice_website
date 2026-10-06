@@ -1,4 +1,4 @@
-const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTiyOLYQ-bjjC3b97vZqcSWQxT-jU4cYJXOU39U8QA4eMRiEk4uqByVjXiBda_D-nfRfWUcRR1Cm0AD/pub?gid=901253624&single=true&output=csv'
+const url = '/planning.php?format=csv'
 
 function parseCsv(csvText) {
   const rows = [[]]
