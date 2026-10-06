@@ -4,6 +4,13 @@
     height: 1rem;
 }
 
+.icon-wrapper,
+.icon-wrapper img {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
 .noContent {
     /* height: 50%; */
     width: 100%;

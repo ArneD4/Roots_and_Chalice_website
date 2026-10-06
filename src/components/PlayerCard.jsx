@@ -1,15 +1,22 @@
 import { usePlayer } from "../context/PlayerContext";
 import "./PlayerCard.css";
 import Button from "./Button";
+import { useLiveShow } from "../hooks/useLiveShow";
 
 function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
-  const { activeShow, playShow } = usePlayer();
+  const { activeShow, playShow, livePlaying, toggleLive } = usePlayer();
+  const { isLive, liveShow } = useLiveShow();
 
   if (!show) return null;
 
   const displayedShow = activeShow ?? show;
   const isSelectedShow = activeShow && activeShow.key !== show.key;
-  const cardTitle = isSelectedShow ? "Je luisterd naar:" : title;
+  const showLive = isLive && (!activeShow || livePlaying);
+  const cardTitle = showLive
+    ? "Nu live op Radio Scorpio"
+    : isSelectedShow
+      ? "Je luisterd naar:"
+      : title;
 
   function playAdjacentShow(direction) {
     const currentIndex = shows.findIndex(
@@ -34,25 +41,38 @@ function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
         <div className="screw screw-bottom-left"></div>
         <div className="screw screw-bottom-right"></div>
         <div className="player-card__screen">
-          <h2 className="player-card__show h2--alt">{displayedShow.title}</h2>
-          <h4 className="player-card__date h4--alt">{displayedShow.date}</h4>
+          <h2 className="player-card__show h2--alt">
+            {showLive ? (liveShow?.title ?? "Roots & Chalice") : displayedShow.title}
+          </h2>
+          <h4 className="player-card__date h4--alt">
+            {showLive ? "Live: 21:00 - 22:30" : displayedShow.date}
+          </h4>
         </div>
 
         <div className="player-card__controls">
           <div className="player-card__extra">
-            <Button
-              variant="secondary"
-              href={displayedShow.url}
-              target="blank"
-              rel="noreferrer"
-              content="Luister op Mixcloud"
-              icon="Play"
-            ></Button>
+            {isLive ? (
+              <Button
+                variant="secondary"
+                onClick={toggleLive}
+                content={livePlaying ? "Stop live" : "Luister nu live"}
+                icon="Play"
+              ></Button>
+            ) : (
+              <Button
+                variant="secondary"
+                href={displayedShow.url}
+                target="blank"
+                rel="noreferrer"
+                content="Luister op Mixcloud"
+                icon="Play"
+              ></Button>
+            )}
             <Button
               variant="tertiary"
               content=""
               icon="Share"
-              share={displayedShow.url}
+              share={showLive ? window.location.origin : displayedShow.url}
             ></Button>
           </div>
           <div className="controls">

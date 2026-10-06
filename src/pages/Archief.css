@@ -3,8 +3,9 @@
   flex-direction: row;
   gap: var(--space-4);
   /* padding: var(--space-2); */
-  align-items: start;
+  align-items: stretch;
   width: 100%;
+  flex: 1;
   background: var(--gradient-primary-reverse);
 }
 

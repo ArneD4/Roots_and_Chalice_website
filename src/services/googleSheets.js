@@ -60,3 +60,43 @@ export async function fetchSheetData() {
     })
     .filter((show) => show.year === currentYear && show.month === currentMonth && show.label)
 }
+
+const brusselsFormat = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Europe/Brussels',
+  weekday: 'short',
+  year: '2-digit',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hourCycle: 'h23',
+})
+
+export function getBrusselsNow(date = new Date()) {
+  const parts = Object.fromEntries(brusselsFormat.formatToParts(date).map((part) => [part.type, part.value]))
+  return {
+    weekday: parts.weekday,
+    scriptDate: `${parts.year}${parts.month}${parts.day}`,
+    minutes: Number(parts.hour) * 60 + Number(parts.minute),
+  }
+}
+
+// live every Tuesday from 21:00 until 22:30 Belgian time
+export function isLiveNow(date = new Date()) {
+  const { weekday, minutes } = getBrusselsNow(date)
+  return weekday === 'Tue' && minutes >= 21 * 60 && minutes < 22 * 60 + 30
+}
+
+export async function fetchTodaysShow() {
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error('Failed to fetch the show schedule')
+  }
+
+  const { scriptDate } = getBrusselsNow()
+  const row = parseCsv(await response.text())
+    .slice(2)
+    .find((item) => item[0] === scriptDate && item[4])
+
+  return row ? { title: row[4], type: row[3], description: row[7] } : null
+}

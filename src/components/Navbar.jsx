@@ -2,29 +2,16 @@ import { useState, useEffect } from 'react' // 1. Added useEffect
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 import Button from './Button'
+import { useLiveShow } from '../hooks/useLiveShow'
 
 const links = [
   { to: '/', label: 'Home' },
   { to: '/archief', label: 'Archief' },
 ]
 
-function isLiveOnAir(now = new Date()) {
-  const parts = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/Brussels',
-    weekday: 'short',
-    hour: '2-digit',
-    minute: '2-digit',
-    hourCycle: 'h23',
-  }).formatToParts(now)
-  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]))
-  const minutes = Number(values.hour) * 60 + Number(values.minute)
-
-  return values.weekday === 'Tue' && minutes >= 21 * 60 && minutes < 22 * 60 + 30
-}
-
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [liveOnAir, setLiveOnAir] = useState(() => isLiveOnAir())
+  const { isLive: liveOnAir } = useLiveShow()
   // 2. Track width in state so React reacts to changes
   const [windowWidth, setWindowWidth] = useState(window.innerWidth) 
 
@@ -36,21 +23,6 @@ function Navbar() {
     
     // Clean up listener when component unmounts
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  useEffect(() => {
-    const updateLiveStatus = () => setLiveOnAir(isLiveOnAir())
-    const delayUntilNextMinute = 60_000 - (Date.now() % 60_000)
-    let intervalId
-    const timeoutId = window.setTimeout(() => {
-      updateLiveStatus()
-      intervalId = window.setInterval(updateLiveStatus, 60_000)
-    }, delayUntilNextMinute)
-
-    return () => {
-      window.clearTimeout(timeoutId)
-      window.clearInterval(intervalId)
-    }
   }, [])
 
   return (
