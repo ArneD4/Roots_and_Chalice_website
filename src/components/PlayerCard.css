@@ -45,6 +45,14 @@
   background: var(--gradient-dark-reverse);
   border-right: 2px solid var(--skeuomorphism-stroke);
   padding: var(--space-1-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.player-card__live {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .player-card_content {

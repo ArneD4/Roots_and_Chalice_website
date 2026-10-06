@@ -4,7 +4,7 @@ import Button from "./Button";
 import { useLiveShow } from "../hooks/useLiveShow";
 
 function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
-  const { activeShow, playShow, livePlaying, toggleLive } = usePlayer();
+  const { activeShow, playShow, livePlaying, toggleLive, startLive } = usePlayer();
   const { isLive, liveShow } = useLiveShow();
 
   if (!show) return null;
@@ -15,7 +15,7 @@ function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
   const cardTitle = showLive
     ? "Nu live op Radio Scorpio"
     : isSelectedShow
-      ? "Je luisterd naar:"
+      ? "Je luistert naar:"
       : title;
 
   function playAdjacentShow(direction) {
@@ -34,6 +34,11 @@ function PlayerCard({ title = "Herbeluister de laatste show", show, shows }) {
         <div className="screw screw-bottom-left"></div>
         <div className="screw screw-bottom-right"></div>
         <h2 className="player-card__title">{cardTitle}</h2>
+        {showLive && (
+          <button type="button" className="navbar__live player-card__live" onClick={startLive}>
+            Live on air
+          </button>
+        )}
       </div>
       <div className="player-card_content">
         <div className="screw screw-top-left"></div>

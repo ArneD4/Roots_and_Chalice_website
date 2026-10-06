@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react' // 1. Added useEffect
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 import Button from './Button'
-import { useLiveShow } from '../hooks/useLiveShow'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -11,7 +10,6 @@ const links = [
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const { isLive: liveOnAir } = useLiveShow()
   // 2. Track width in state so React reacts to changes
   const [windowWidth, setWindowWidth] = useState(window.innerWidth) 
 
@@ -57,9 +55,6 @@ function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          {liveOnAir && (
-            <a href="https://www.radioscorpio.be/" className="navbar__live">Live on air</a>
-          )}
         </nav>
 
         <div className="navbar__actions">

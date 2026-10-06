@@ -52,6 +52,12 @@ export function PlayerProvider({ children }) {
       stopLive()
       return
     }
+    await startLive()
+  }
+
+  // no-op when the stream is already playing
+  async function startLive() {
+    if (liveAudioRef.current) return
 
     widgetRef.current?.pause()
     const audio = new Audio(LIVE_STREAM_URL)
@@ -81,7 +87,7 @@ export function PlayerProvider({ children }) {
   }
 
   return (
-    <PlayerContext.Provider value={{ activeShow, audioUnlocked, bootstrapKey, livePlaying, toggleLive, playShow, registerWidget, unlockAudio }}>
+    <PlayerContext.Provider value={{ activeShow, audioUnlocked, bootstrapKey, livePlaying, toggleLive, startLive, playShow, registerWidget, unlockAudio }}>
       {children}
     </PlayerContext.Provider>
   )

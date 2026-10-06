@@ -100,6 +100,8 @@
   box-shadow: var(--shadow-on-air);
   animation: live-on-air-glow 1.6s ease-in-out infinite;
   text-decoration: none;
+  font-size: inherit;
+  cursor: pointer;
 }
 
 @keyframes live-on-air-glow {

@@ -226,7 +226,7 @@
 @media (max-width: 1000px) {
   .home {
     padding: 0;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 100%;
   }
 
