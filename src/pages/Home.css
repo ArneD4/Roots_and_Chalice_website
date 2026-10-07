@@ -234,6 +234,11 @@
     border-radius: 0;
     max-width: unset;
     width: 100%;
+    /* .home__intro_inner adds its own var(--space-1-5) padding on top of this,
+       so reduce this padding here to keep the content flush with the screen
+       edge the same distance as on the Archief page. */
+    padding-left: var(--space-0-5);
+    padding-right: var(--space-0-5);
   }
 
   .big_logo {

@@ -13,6 +13,22 @@
   box-shadow: var(--shadow-dropshadow);
   border-color: var(--skeuomorphism-stroke-color);
   border-width: 0 0 2px 2px;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 500ms ease, opacity 500ms ease;
+}
+
+.navbar--ready {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    transition: none;
+  }
 }
 
 

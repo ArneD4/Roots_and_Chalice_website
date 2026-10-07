@@ -2,6 +2,17 @@ button {
   font-family: inherit;
   cursor: pointer;
   border: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+button img,
+button svg {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 /* ---- Button variants (fill in from Figma "Button" component) ---- */

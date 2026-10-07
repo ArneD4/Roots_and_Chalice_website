@@ -8,7 +8,7 @@ const links = [
   { to: '/archief', label: 'Archief' },
 ]
 
-function Navbar() {
+function Navbar({ ready }) {
   const [menuOpen, setMenuOpen] = useState(false)
   // 2. Track width in state so React reacts to changes
   const [windowWidth, setWindowWidth] = useState(window.innerWidth) 
@@ -24,7 +24,7 @@ function Navbar() {
   }, [])
 
   return (
-    <header className="navbar">
+    <header className={`navbar${ready ? ' navbar--ready' : ''}`}>
       <div className="screw screw-top-left"></div>
       <div className="screw screw-top-right"></div>
       <div className="screw screw-bottom-left"></div>
